@@ -8,30 +8,33 @@ public class FolhaPGTO {
         
         // Empregados mensalistas
         men1 = new Mensalista("Junior", "Rua ABC", "Junior");
-        men1.calcularSalario();
-        men1.calcularInss();
-        System.out.println("Nome: " + men1.getNome());
-        System.out.println("Endereço: " + men1.getEndereco());
-        System.out.println("Salario: " + men1.getSalario());
+        imprimirMensalista(men1);
         
         men2 = new Mensalista("Ana", "Rua sem fim", "Senior");
-        men2.calcularSalario();
-        men2.calcularInss();
-        System.out.println("Nome: " + men2.getNome());
-        System.out.println("Endereço: " + men2.getEndereco());
-        System.out.println("Salario: " + men2.getSalario());
+        imprimirMensalista(men2);
 
         // Empregados horistas
         hora1 = new Horista("Carlos", "Rua xyz", 20);
-        hora1.calcularSalario();
-        System.out.println("Nome: " + hora1.getNome());
-        System.out.println("Endereço: " + hora1.getEndereco());
-        System.out.println("Salario: " + hora1.getSalario());
+        imprimirHorista(hora1);
         
         hora2 = new Horista("Cristina", "Rua do centro  ", 100);
-        hora2.calcularSalario();
-        System.out.println("Nome: " + hora2.getNome());
-        System.out.println("Endereço: " + hora2.getEndereco());
-        System.out.println("Salario: " + hora2.getSalario());
+        imprimirHorista(hora2);
+    }
+
+    // Criados 2 métodos para imprimir as informações dos mensalistas e horistas
+    public static void imprimirMensalista(Mensalista men) {
+        men.calcularSalario();
+        men.calcularInss();
+        System.out.println("Nome: " + men.getNome());
+        System.out.println("Endereço: " + men.getEndereco());
+        System.out.println("Salario: " + men.getSalario());
+    }
+    
+    public static void imprimirHorista(Horista hora) {
+        hora.calcularSalario();
+        hora.calcularIrpf(hora.getSalario());
+        System.out.println("Nome: " + hora.getNome());
+        System.out.println("Endereço: " + hora.getEndereco());
+        System.out.println("Salario: " + hora.getSalario());
     }
 }

@@ -23,8 +23,10 @@ public class Mensalista extends Empregado {
             salario = 2500;
         } else if (cargo.equals("Pleno")) {
             salario = 3500;
-        } else {
+        } else if (cargo.equals("Senior")) { // Erro encontrado: não havia verificação para string  "Senior", portanto, qualquer string poderia se enquadrar neste else.
             salario = 5500;
+        } else {
+            System.out.println("Cargo incorreto");
         }
     }
 }
